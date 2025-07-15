@@ -655,7 +655,7 @@ select.form-control {
 }
 
 /* END PERPLEXITY DESIGN SYSTEM */
-```css
+
 :root {
   /* Colors */
   --color-background: rgba(252, 252, 249, 1);
@@ -1391,4 +1391,3 @@ body {
   src: url('https://r2cdn.perplexity.ai/fonts/FKGroteskNeue.woff2')
     format('woff2');
 }
-```
