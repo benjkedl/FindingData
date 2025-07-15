@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excel Learning Module</title>
+    <link rel="stylesheet" href="style_final.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Main Landing Page -->
+        <div id="landing-page" class="page active">
+            <div class="hero-section">
+                <h1>UME Upskilling: FINDING DATA</h1>
+                <p>This prework will help prepare you for our practice activity on Thursday, 7/15.  The Mini-quiz at the beginning will hep determine the content that will be most useful for you in your work.</p>
+                <button class="btn btn--primary btn--lg" onclick="startAssessment()">Start Assessment</button>
+            </div>
+        </div>
+
+        <!-- Assessment Quiz -->
+        <div id="assessment-page" class="page">
+            <div class="assessment-container">
+                <h2>Excel Self-Assessment</h2>
+                <p class="assessment-intro">Answer these questions to determine your learning path:</p>
+
+                <div id="question-container">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progress-fill"></div>
+                    </div>
+                    <div class="question-counter">
+                        Question <span id="current-question">1</span> of <span id="total-questions">5</span>
+                    </div>
+
+                    <div class="question-card">
+                        <h3 id="question-text"></h3>
+                        <div class="options-container" id="options-container"></div>
+                        <button class="btn btn--primary" id="next-btn" onclick="nextQuestion()" disabled>Next</button>
+                    </div>
+                </div>
+
+                <div id="assessment-result" class="result-card" style="display: none;">
+                    <h3>Assessment Complete!</h3>
+                    <p id="result-text"></p>
+                    <button class="btn btn--primary" id="start-learning-btn" onclick="startLearning()">Start Learning</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Learning Content Pages -->
+        <div id="learning-page" class="page">
+            <div class="learning-container">
+                <div class="learning-header">
+                    <h2 id="lesson-title"></h2>
+                    <div class="page-nav">
+                        <button class="btn btn--secondary" id="prev-btn" onclick="previousPage()">Previous</button>
+                        <span id="page-counter"></span>
+                        <button class="btn btn--secondary" id="next-btn-lesson" onclick="nextPage()">Next</button>
+                    </div>
+                </div>
+
+                <div class="lesson-content">
+                    <div class="info-section">
+                        <h3>Learning Objective</h3>
+                        <p id="lesson-content"></p>
+                    </div>
+
+                    <div class="practice-section">
+                        <h3>Practice Exercise</h3>
+                        <p id="exercise-description"></p>
+                        
+                        <!-- Excel Grid -->
+                        <div class="excel-container">
+                            <div class="excel-grid" id="excel-grid">
+                                <!-- Column headings -->
+                                <div></div>
+                                <div class="excel-heading">A</div>
+                                <div class="excel-heading">B</div>
+                                <div class="excel-heading">C</div>
+                                <div class="excel-heading">D</div>
+                                <div class="excel-heading">E</div>
+                                <div class="excel-heading">F</div>
+                                <div class="excel-heading">G</div>
+                                <div class="excel-heading">H</div>
+
+                                <!-- Rows will be dynamically generated -->
+                            </div>
+                        </div>
+
+                        <div class="exercise-controls">
+                            <button class="btn btn--primary" id="submit-btn" onclick="submitAnswer()">Submit Answer</button>
+                            <button class="btn btn--secondary" id="reset-btn" onclick="resetExercise()">Reset</button>
+                        </div>
+
+                        <div id="feedback" class="feedback-section" style="display: none;">
+                            <div class="feedback-content">
+                                <h4 id="feedback-title"></h4>
+                                <p id="feedback-message"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Menu Navigation -->
+            <div class="menu-nav">
+                <button class="btn btn--outline" onclick="goToMenu()">Main Menu</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app_final.js"></script>
+</body>
+</html>
